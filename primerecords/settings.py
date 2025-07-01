@@ -18,6 +18,7 @@ import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_DIR = Path(__file__).parent
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
@@ -88,16 +89,10 @@ WSGI_APPLICATION = 'primerecords.wsgi.application'
 
 DATABASES = {
     # 'default':dj_database_url.parse('postgresql://postgres:Ready007!@@db.gxzrhhnlnrsmaglyggyi.supabase.co:5432/postgres')
-     'default': dj_database_url.config('postgresql://postgres:Ready007!@@db.gxzrhhnlnrsmaglyggyi.supabase.co:5432/postgres')
-    
-    # {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'ddrb64nu3sm62c',
-    #     'HOST': 'ec2-3-228-86-183.compute-1.amazonaws.com',
-    #     'PORT': '5432',
-    #     'USER': 'kqxhhpfrtsnswq',
-    #     'PASSWORD': '3bea263d045a79a7193741d07bebe0f77a42430cd8a075aebce936056248ff32',
-    # }
+    #  'default': dj_database_url.config('psql 'postgresql://neondb_owner:npg_VpPeU3wq2WGj@ep-late-mouse-a8eakv90-pooler.eastus2.azure.neon.tech/neondb?sslmode=require&channel_binding=require'')
+    'default': dj_database_url.config(
+        default='postgresql://neondb_owner:npg_VpPeU3wq2WGj@ep-late-mouse-a8eakv90-pooler.eastus2.azure.neon.tech/neondb?sslmode=require&channel_binding=require'
+    )
     
 } 
 
